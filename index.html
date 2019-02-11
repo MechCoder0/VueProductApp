@@ -7,24 +7,29 @@
 <body>
 
 	<div class="nav-bar"></div>
+	<div id="banner">
+		<p v-if="banner">This is a banner</p>
+	</div>
 
 	<div id="app">
 		<div class="product">
 
-			<div class="product_image">
+			<div class="product-image">
 				<img v-bind:src="image">
 			</div>
 
-			<div class="product_info">
+			<div class="product-info">
 				<h1>{{product}}</h1>
 				{{description}}
+				<p v-if="onSale" style="color:yellow">On Sale!</p>
+				
+				<p v-if="inventory > 10">In Stock</p>
+				<p v-else-if="inventory<=10 && inventory > 0">Almost sold out</p>
+				<p v-else>Out of Stock</p>
 				<div class="googleLink">
 					Click <a :href="google">here</a> to go to google.
 				</div>
 			</div>
-
-			
-			
 		</div>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
