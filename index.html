@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Product App</title>
+	<link rel="stylesheet" type="text/css" href="product_style.css">
+</head>
+<body>
+
+	<div class="nav-bar"></div>
+
+	<div id="app">
+		<div class="product">
+
+			<div class="product_image">
+				<img v-bind:src="image">
+			</div>
+
+			<div class="product_info">
+				<h1>{{product}}</h1>
+				{{description}}
+				<div class="googleLink">
+					Click <a :href="google">here</a> to go to google.
+				</div>
+			</div>
+
+			
+			
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>
